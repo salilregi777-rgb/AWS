@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./atmosphere.css";
 
 export const metadata: Metadata = {
   title: "Relay — Community response, connected",

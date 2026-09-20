@@ -1,8 +1,10 @@
 export type Category = 'rescue' | 'medical' | 'supplies' | 'infrastructure';
 export type Severity = 'critical' | 'high' | 'moderate';
-export type Incident = { id: string; title: string; location: string; lat: number; lng: number; category: Category; severity: Severity; people: number; description: string; source: string; status: 'open' | 'dispatched' | 'resolved'; createdAt: string; teamId?: string; district: string };
+export type SupportingReport = { id:string; text:string; reportedAt:string; people:number; severity:Severity };
+export type Incident = { id: string; title: string; location: string; lat: number; lng: number; category: Category; severity: Severity; people: number; description: string; source: string; status: 'open' | 'dispatched' | 'resolved'; createdAt: string; teamId?: string; district: string; reports?:SupportingReport[]; evidence?:string[]; originalReport?:{people:number;severity:Severity;evidence?:string[]} };
+export type ReportInput = Pick<Incident,'title'|'location'|'lat'|'lng'|'category'|'severity'|'people'|'description'|'evidence'>;
 export type Team = { id: string; name: string; initials: string; skill: Category; members: number; capacity: number; lat: number; lng: number; district: string; color: string };
-export type Audit = { id: string; time: string; action: string; detail: string; outcome: 'Allow' | 'Deny' | 'Info'; policy?: string };
+export type Audit = { id: string; time: string; action: string; detail: string; outcome: 'Allow' | 'Deny' | 'Info'; policy?: string; incidentId?:string; kind?:'report'|'dispatch'|'resolve'|'fusion'|'denied' };
 export const scenarioTime = '2026-09-19T04:30:00.000Z';
 export const categoryLabels: Record<Category, string> = { rescue: 'Rescue', medical: 'Medical', supplies: 'Supplies', infrastructure: 'Infrastructure' };
 export const initialIncidents: Incident[] = [

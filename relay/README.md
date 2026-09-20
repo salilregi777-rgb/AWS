@@ -44,7 +44,13 @@ npm run typecheck
 npm run build
 ```
 
-Tests exercise the actual Cedar engine, schema validation, denied and allowed actions, unsafe team exclusions, number extraction, negation, duplicate fusion and persistence invariants. The production output is generated in `dist/`. The development preview is the supported local demonstration flow; no cloud deployment is configured.
+Tests exercise the actual Cedar engine, schema validation, denied and allowed actions, unsafe team exclusions, number extraction, negation, duplicate fusion and persistence invariants. The original preview build is generated in `dist/`.
+
+## AWS release
+
+`npm run build:aws` builds the same application as a static site in `dist-aws/`, ready for AWS Amplify Hosting. `npm run preview:aws` serves that production output on http://127.0.0.1:5174. The AWS build does not use the starter's Cloudflare adapter.
+
+See [deployment instructions](docs/DEPLOYMENT.md) for packaging, publishing, verification and rollback. Hosting does not change the browser-local data model or turn the demo roles into authenticated users. A live AWS URL must be verified before claiming deployment in the submission.
 
 ## Submission material
 

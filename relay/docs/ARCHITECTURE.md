@@ -39,8 +39,19 @@ Geographic positions are neighbourhood centres. The Three.js field height encode
 
 Map tiles use OpenStreetMap; fonts use Google Fonts. Report text is not sent to either service. Core triage and Cedar do not require an API key.
 
-## AWS cloud next step (not implemented or deployed)
+## AWS hosting build
+
+`vite.aws.config.ts` builds the existing React application as static assets, with
+the same CSS, illustrations and real Cedar engine. `amplify.yml` and
+`docs/DEPLOYMENT.md` describe AWS Amplify Hosting deployment. This separate build
+removes the local preview's Cloudflare adapter from the release. The generated
+ZIP contains public browser assets only. Hosting preserves the browser-local
+state model; it does not provide shared storage or server-side authorization.
+
+## AWS backend next step (not implemented or deployed)
 
 For a production-oriented cloud version, authenticated identities would go through an API that obtains trusted team/incident attributes, calls Amazon Verified Permissions, and writes assignments with a transactional concurrency condition. Human confirmation would be tied to an authenticated request. Server-side audit and multi-client event delivery would follow that committed transaction. Model-assisted triage and S3 evidence uploads would need a separate data-handling and review workflow.
 
-No AWS account is configured for this version. No Bedrock, Verified Permissions, S3, SNS or cloud deployment is claimed.
+No Bedrock, Verified Permissions, S3 or SNS backend is connected. A successful
+Amplify deployment and verified HTTPS URL are required before claiming live AWS
+hosting; preparing the build alone does not establish deployment.

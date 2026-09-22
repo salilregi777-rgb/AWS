@@ -1,0 +1,13 @@
+.page-transition{left:236px;top:72px;z-index:50;pointer-events:auto}
+.page-transition .transition-destination,.page-transition .transition-crest,.page-transition .ember-edge{display:none}
+.page-transition .transition-curtain{background:radial-gradient(ellipse at 65% 40%,#113d7f22,transparent 60%),#05070c;box-shadow:none;animation:relayVeil .62s ease-in-out both}
+.page-transition.transition-wave .transition-curtain{background:linear-gradient(110deg,#05070c,#0c2140 55%,#05070c);animation:relayVeil .62s ease-in-out both}
+.page-transition.transition-ember .transition-curtain{background:linear-gradient(100deg,#05070c 45%,#124b962b 55%,#05070c 70%);clip-path:none;animation:relayVeil .62s ease-in-out both}
+.app-shell[data-page-phase=cover] .app-main>:first-child{animation:relayDepart .18s ease-in both}
+.app-shell[data-page-phase=reveal] .app-main>:first-child{animation:relayArrive .44s cubic-bezier(.16,1,.3,1) both}
+@keyframes relayVeil{0%{opacity:0}28%,34%{opacity:.98}100%{opacity:0}}
+@keyframes relayDepart{to{opacity:.3;transform:translateY(-5px)}}
+@keyframes relayArrive{from{opacity:.25;transform:translateY(9px)}to{opacity:1;transform:none}}
+@media(max-width:999px){.page-transition{left:0}}
+@media(max-width:767px){.page-transition{top:64px}}
+@media(prefers-reduced-motion:reduce){.page-transition{display:none}.app-shell[data-page-phase] .app-main>:first-child{animation:none}}

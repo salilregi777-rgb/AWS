@@ -1,0 +1,30 @@
+/* Graphite, silver and glacial cyan. Keep status amber distinct. */
+:root{--background:#0a1013;--foreground:#edf3f3;--card:#111d21;--popover:#152329;--primary:#b7e5e4;--primary-foreground:#10282b;--secondary:#1a2d32;--muted:#19282d;--muted-foreground:#a0b1b5;--accent:#233e43;--accent-foreground:#d3f1ef;--border:#b7dedb1c;--ring:#b7e5e4;--lime:#b7e5e4;--ember:#e8b38c}
+html,body{background:#0a1013;color:#edf3f3}
+.command-header{background:#0a1216ed}
+.glow-one{background:#518e94;opacity:.075}
+.glow-two{background:#b58a60;opacity:.03}
+.mission-intro h1 em{color:#d8eeec}
+.trust-strip{position:relative;isolation:isolate;overflow:hidden}
+.trust-strip>.trust-waves{z-index:-1;opacity:.07;mask-image:linear-gradient(90deg,transparent,#000 35%,#000 65%,transparent);pointer-events:none}
+.city-image-drift img{filter:saturate(.55) brightness(.8)}
+.city-color-wash{background:linear-gradient(90deg,#0a1013f2 0%,#0a1013cb 24%,#0a101319 60%,#0a101344),linear-gradient(0deg,#0a1013 0%,#0a101319 29%,#0a101300 66%,#0a101364 100%)}
+.city-signal-card{background:linear-gradient(130deg,#192b2fd9,#101b20eb);border-color:#b9dcdb3d}
+.city-reflection{background:radial-gradient(ellipse,#a9e5df12,transparent 68%)}
+.focus-dock{background:linear-gradient(120deg,#14282eed,#101d22ed);border-color:#bcdfda30}
+.stream-glow .stream-card{width:100%;height:100%;border-radius:7px;background:linear-gradient(140deg,#15272b,#101b20);border-color:#b9d8d724;transform:none}
+.stream-glow .stream-card:hover{border-color:#b9e7df5c;background:linear-gradient(140deg,#1a3034,#132126)}
+.team-card,.signal-card{background:linear-gradient(140deg,#15272b,#101b20);border-color:#b9d8d724}
+.simulation-panel,.activity-panel{background:radial-gradient(ellipse at top left,#79b7b50d,transparent 70%),#101d22}
+.work-surface{background:radial-gradient(ellipse at 90% 5%,#70aaa711,transparent 45%)}
+.rehearsal-launch{background:linear-gradient(120deg,#203a3b,#112126)}
+.poster-scene{left:45%;top:86px;width:53%;height:calc(100% - 310px);pointer-events:auto;mask-image:linear-gradient(0deg,transparent,#000 13%,#000 87%,transparent);z-index:2}
+.city-posters{width:100%;height:100%;filter:saturate(.55)}
+.scene-mode [data-slot=tabs-trigger][data-state=active]{background:#b5e5df22;color:#d4f4ed;border-color:#b5e5df50}
+@media(min-width:1600px){.poster-scene{left:44%;width:54%;top:110px}}
+@media(max-width:1000px) and (min-width:768px){.poster-scene{left:49%;width:49%}}
+@media(max-width:767px){
+  .city-color-wash{background:linear-gradient(0deg,#0a1013 0%,#0a101300 28%,#0a101300 48%,#0a1013 69%)}
+  .poster-scene{top:510px;left:12px;width:calc(100% - 24px);height:335px;mask-image:linear-gradient(0deg,transparent,#000 12%,#000 88%,transparent)}
+  .scene-mode [data-slot=tabs-trigger]{padding-inline:10px}
+}

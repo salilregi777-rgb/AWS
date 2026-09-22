@@ -1,0 +1,27 @@
+.posters-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  touch-action: pan-y;
+  cursor: grab;
+  outline-offset: -4px;
+}
+
+.posters-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.posters-fallback{position:absolute;inset:6%;width:88%;height:88%;object-fit:contain;pointer-events:none}
+.posters-container[data-ready=true] .posters-canvas{opacity:1}
+.posters-container[data-ready=true] .posters-fallback{opacity:0}
+.posters-hint{position:absolute;bottom:0;left:0;right:0;text-align:center;font:10px 'IBM Plex Mono',monospace;color:#658cba;pointer-events:none;opacity:0}
+.posters-container[data-ready=true]:hover .posters-hint,.posters-container:focus-visible .posters-hint{opacity:1}
+@media(prefers-reduced-motion:reduce){.posters-container .posters-fallback{opacity:1}.posters-container .posters-canvas,.posters-hint{display:none}}

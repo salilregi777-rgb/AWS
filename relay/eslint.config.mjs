@@ -1,16 +1,23 @@
 import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import { FlatCompat } from "@eslint/eslintrc";
+import { fileURLToPath } from "node:url";
+
+// Next 15 ships legacy ESLint presets; adapt them to ESLint 9's flat format.
+const compat = new FlatCompat({ baseDirectory: fileURLToPath(new URL('.', import.meta.url)) });
 
 const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
+    "dist/**",
+    "dist-aws/**",
+    ".npm-cache/**",
+    ".vinext/**",
+    ".wrangler/**",
     "next-env.d.ts",
   ]),
   {

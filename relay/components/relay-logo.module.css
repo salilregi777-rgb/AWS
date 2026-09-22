@@ -1,0 +1,8 @@
+.wordmark{color:#eef5ff!important}.mark{color:#4e96ff!important;overflow:visible}.period{color:#418cff!important}
+.orbit{transform-origin:22px 22px;animation:orbit 16s linear infinite}.signal{stroke-dasharray:51;stroke-dashoffset:0;animation:trace 6s ease-in-out infinite}.beacon{transform-origin:34px 22px;animation:beacon 3s ease-in-out infinite;filter:drop-shadow(0 0 4px #64b0ff)}.tile{transition:stroke .3s,fill .3s}
+.wordmark:hover .tile{stroke:#55a4ff;fill:#102d56}.wordmark:hover .beacon{filter:drop-shadow(0 0 6px #9ecfff)}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes trace{0%,65%,100%{stroke-dashoffset:0;opacity:1}74%{stroke-dashoffset:51;opacity:.25}75%{stroke-dashoffset:51;opacity:1}95%{stroke-dashoffset:0}}
+@keyframes beacon{0%,100%{opacity:.7;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}}
+:global(.motion-paused) .orbit,:global(.motion-paused) .signal,:global(.motion-paused) .beacon{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.orbit,.signal,.beacon{animation:none}}
